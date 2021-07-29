@@ -2,10 +2,12 @@
 
     @@all = []
 
-    attr_accessor :name 
+    attr_accessor :name , :artist
 
-    def initialize(name)
+    def initialize(name, artist = nil)
         @name = name
+        self.artist = artist if artist
+
         
     end 
 
@@ -27,6 +29,13 @@
         title.save
         title
     end
+
+    def artist=(name)
+        @artist = name 
+        name.add_song(self)
+    end 
+
+
     
 
     
