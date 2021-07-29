@@ -32,9 +32,19 @@ class Artist
     
 
     def add_song(song)
-        if not song.artist == self 
+        if not song.artist  
             song.artist = self
         end
+    end
+
+
+    
+    def genres
+        songs.collect do |s|
+            s.genre
+    
+        
+        end.uniq
     end
 
 

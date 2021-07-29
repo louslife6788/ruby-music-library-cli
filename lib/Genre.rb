@@ -26,4 +26,18 @@ class Genre
         name
     end
 
+    def songs
+        Song.all.select do |s|
+            s.genre == self
+        end
+    end
+
+    def artists
+        songs.map do |s|
+            s.artist
+        end.uniq
+
+    end
+
+
 end
