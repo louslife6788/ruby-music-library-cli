@@ -4,6 +4,8 @@ class Artist
 
     attr_accessor :name
 
+    extend Concerns::Findable
+
     def initialize(name)
         @name = name 
     end
